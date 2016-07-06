@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Work\Bobrinskaya_11401_Java_2016\Cooker3"/>
+    <property name="user.dir" value="C:\Users\Ekaterina\Desktop\Fujitsu\Cooker3"/>
     <property name="java.runtime.version" value="1.8.0_60-b27"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_60\jre\lib\endorsed"/>
@@ -61,6 +61,6 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="TestUserService" name="getByloginShoulworkCorrect" time="0"/>
-  <testcase classname="TestUserService" name="getByPhoneShouldworkCorrect" time="0.001"/>
+  <testcase classname="TestUserService" name="getByloginShoulworkCorrect" time="0.001"/>
+  <testcase classname="TestUserService" name="getByPhoneShouldworkCorrect" time="0"/>
 </testsuite>

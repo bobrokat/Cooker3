@@ -214,6 +214,7 @@
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
         <configuration>
           <source>${java.version}</source>
           <target>${java.version}</target>
@@ -221,6 +222,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-war-plugin</artifactId>
+        <version>2.1.1</version>
       </plugin>
     </plugins>
   </build>
