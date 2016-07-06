@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <context:component-scan base-package="com.itis.bobrinskaya.service"/>
+    <context:component-scan base-package="com.itis.bobrinskaya.api.service"/>
+    <import resource="persistance-config.xml"/>
+    <import resource="security-config.xml"/>
+
+    <context:component-scan base-package="com.itis.bobrinskaya.repository com.itis.bobrinskaya.model"/>
+    <context:component-scan base-package="com.itis.bobrinskaya.repository com.itis.bobrinskaya.form.validators"/>
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="500000" />
+    </bean>
+
+    <!--Excel and PDF xml view configuration -->
+    <bean class="org.springframework.web.servlet.view.XmlViewResolver">
+        <property name="order" value="0" />
+        <property name="location">
+            <value>/WEB-INF/pdf-config.xml</value>
+        </property>
+    </bean>
+
+    <!--&lt;!&ndash; Configure to plugin JSON as request and response in method handler &ndash;&gt;-->
+    <!--<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">-->
+        <!--<property name="messageConverters">-->
+            <!--<list>-->
+                <!--<ref bean="jsonMessageConverter"/>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--&lt;!&ndash; Configure bean to convert JSON to POJO and vice versa &ndash;&gt;-->
+    <!--<bean id="jsonMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">-->
+    <!--</bean>-->
+
+    <aop:aspectj-autoproxy/>
+
+    <bean id="infoLogger" class="com.itis.bobrinskaya.logger.LoggerInfo"/>
+    <bean id="anotherpdfDocument"  class="com.itis.bobrinskaya.util.AnotherPdF"/>
+
+</beans>
